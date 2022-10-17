@@ -4,7 +4,7 @@ function Home() {
   return (
     <div className="">
       <div>Home</div>
-      <Navbar />
+      {/* <Navbar /> */}
     </div>
   );
 }

@@ -1,15 +1,12 @@
-import React, { FC } from "react";
-import Footer from "../Navbar";
+import { FC } from "react";
+import Navbar from "../Navbar";
+import { Outlet } from "react-router-dom";
 
-interface Props {
-  children: React.ReactNode;
-}
-
-const Layout: FC<Props> = ({ children }) => {
+const Layout: FC = () => {
   return (
     <div>
-      {children}
-      <Footer />
+      <Outlet />
+      <Navbar />
     </div>
   );
 };

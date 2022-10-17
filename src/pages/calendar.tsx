@@ -4,7 +4,6 @@ function Calendar() {
   return (
     <div>
       <div>CALENDAR</div>
-      <Navbar />
     </div>
   );
 }

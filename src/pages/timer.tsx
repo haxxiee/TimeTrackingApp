@@ -4,7 +4,6 @@ function Timer() {
   return (
     <div>
       <div>TIMER</div>
-      <Navbar />
     </div>
   );
 }
