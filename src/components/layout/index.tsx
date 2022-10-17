@@ -1,12 +1,15 @@
 import { FC } from "react";
 import Navbar from "../Navbar";
 import { Outlet } from "react-router-dom";
+import StoreProvider from "../../context";
 
 const Layout: FC = () => {
   return (
     <div>
-      <Outlet />
-      <Navbar />
+      <StoreProvider>
+        <Outlet />
+        <Navbar />
+      </StoreProvider>
     </div>
   );
 };

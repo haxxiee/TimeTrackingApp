@@ -6,6 +6,7 @@ import "./index.css";
 import Calendar from "./pages/calendar";
 import Timer from "./pages/timer";
 import Layout from "./components/layout";
+import StoreProvider from "./context";
 
 const router = createBrowserRouter([
   {
