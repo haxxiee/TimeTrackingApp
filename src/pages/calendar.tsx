@@ -1,12 +1,12 @@
 import Navbar from "../components/Navbar";
 
-function Home() {
+function Calendar() {
   return (
-    <div className="">
-      <div>Home</div>
+    <div>
+      <div>CALENDAR</div>
       <Navbar />
     </div>
   );
 }
 
-export default Home;
+export default Calendar;

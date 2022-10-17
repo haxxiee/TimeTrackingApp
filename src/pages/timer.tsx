@@ -1,12 +1,12 @@
 import Navbar from "../components/Navbar";
 
-function Home() {
+function Timer() {
   return (
-    <div className="">
-      <div>Home</div>
+    <div>
+      <div>TIMER</div>
       <Navbar />
     </div>
   );
 }
 
-export default Home;
+export default Timer;

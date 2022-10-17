@@ -1,10 +1,14 @@
 import { FC } from "react";
+import { NavLink } from "react-router-dom";
 
-const Footer: FC = () => {
+const Navbar: FC = () => {
   return (
     <div className="flex w-full h-20 bg-indigo-800/30 fixed top-auto bottom-0 rounded-tr-lg rounded-tl-lg">
       <div className="flex justify-center items-center m-auto gap-20 text-gray-800">
-        <a href="#">
+        <NavLink
+          to="/timer"
+          className={({ isActive }) => (isActive ? "bg-white" : "")}
+        >
           <svg
             width="24"
             height="24"
@@ -21,8 +25,11 @@ const Footer: FC = () => {
               fill="currentColor"
             />
           </svg>
-        </a>
-        <a href="#">
+        </NavLink>
+        <NavLink
+          to="/calendar"
+          className={({ isActive }) => (isActive ? "bg-white" : "")}
+        >
           <svg
             width="24"
             height="24"
@@ -41,8 +48,12 @@ const Footer: FC = () => {
               fill="currentColor"
             />
           </svg>
-        </a>
-        <a href="/" className="">
+        </NavLink>
+        <NavLink
+          to="/"
+          end
+          className={({ isActive }) => (isActive ? "bg-white" : "")}
+        >
           <svg
             width="24"
             height="24"
@@ -58,10 +69,10 @@ const Footer: FC = () => {
               fill="currentColor"
             />
           </svg>
-        </a>
+        </NavLink>
       </div>
     </div>
   );
 };
 
-export default Footer;
+export default Navbar;
