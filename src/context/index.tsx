@@ -44,8 +44,15 @@ const StoreProvider: FC<any> = ({ children }) => {
       });
   };
 
+  const getProjectFromId = (projectId: string) => {
+    const project = projects.find((item) => item.id === projectId);
+    return project;
+  };
+
   return (
-    <StoreContext.Provider value={{ projects, tasks, timelogs, createProject }}>
+    <StoreContext.Provider
+      value={{ projects, tasks, timelogs, createProject, getProjectFromId }}
+    >
       {children}
     </StoreContext.Provider>
   );

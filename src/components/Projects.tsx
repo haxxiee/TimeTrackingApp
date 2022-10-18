@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import { useStoreContext } from "../context";
 import { v4 as uuidv4 } from "uuid";
 import CreateProjectModal from "./CreateProjectModal";
+import ProjectItem from "./ProjectItem";
 
 const Projects: FC = () => {
   const [modal, setModal] = useState<boolean>(false);
@@ -15,14 +16,12 @@ const Projects: FC = () => {
 
   if (!projects) return <div>Loading..</div>;
   return (
-    <div>
-      <div>PROJECTS</div>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="text-lg font-semibold my-2">PROJECTS</h1>
       {projects &&
         projects.map((item: any) => {
           return (
-            <div key={item.id}>
-              <div>{item.name}</div>
-            </div>
+            <ProjectItem key={item.id} name={item.name} color={item.color} />
           );
         })}
       <button className="bg-gray-400" onClick={() => setModal(true)}>
