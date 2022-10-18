@@ -1,8 +1,19 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useStoreContext } from "../context";
+import { v4 as uuidv4 } from "uuid";
+import CreateProjectModal from "./CreateProjectModal";
 
 const Projects: FC = () => {
-  const { projects, setProjects } = useStoreContext();
+  const [modal, setModal] = useState<boolean>(false);
+  const { projects, createProject } = useStoreContext();
+
+  const test = {
+    id: uuidv4(),
+    name: `Projekt nr 5`,
+    color: "red",
+  };
+
+  if (!projects) return <div>Loading..</div>;
   return (
     <div>
       <div>PROJECTS</div>
@@ -14,6 +25,11 @@ const Projects: FC = () => {
             </div>
           );
         })}
+      <button className="bg-gray-400" onClick={() => setModal(true)}>
+        CREATE PROJECT
+      </button>
+
+      {modal && <CreateProjectModal setModal={setModal} />}
     </div>
   );
 };

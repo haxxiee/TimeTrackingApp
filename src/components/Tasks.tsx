@@ -1,8 +1,10 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useStoreContext } from "../context";
+import CreateTaskModal from "./CreateTaskModal";
 
 const Tasks: FC = () => {
-  const { tasks, setProjects } = useStoreContext();
+  const [modal, setModal] = useState<boolean>(false);
+  const { tasks } = useStoreContext();
   return (
     <div>
       <div>TASKS</div>
@@ -14,6 +16,11 @@ const Tasks: FC = () => {
             </div>
           );
         })}
+      <button className="bg-gray-400" onClick={() => setModal(true)}>
+        CREATE PROJECT
+      </button>
+
+      {modal && <CreateTaskModal setModal={setModal} />}
     </div>
   );
 };

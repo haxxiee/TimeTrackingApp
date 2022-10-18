@@ -6,7 +6,6 @@ import React, {
   useEffect,
 } from "react";
 import axios from "axios";
-import { getProjects } from "./functions";
 export const StoreContext = createContext<any | null>(null);
 
 const StoreProvider: FC<any> = ({ children }) => {
@@ -26,8 +25,27 @@ const StoreProvider: FC<any> = ({ children }) => {
     });
   }, []);
 
+  const customConfig = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  const createProject = (project: any) => {
+    axios
+      .post(
+        "http://localhost:3000/projects",
+        JSON.stringify(project),
+        customConfig
+      )
+      .then((res) => {
+        console.log(res);
+        setProjects((prevstate) => [...prevstate, project]);
+      });
+  };
+
   return (
-    <StoreContext.Provider value={{ projects, tasks, timelogs }}>
+    <StoreContext.Provider value={{ projects, tasks, timelogs, createProject }}>
       {children}
     </StoreContext.Provider>
   );
