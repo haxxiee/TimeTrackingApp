@@ -9,7 +9,7 @@ interface Props {
 const ProjectItem: FC<Props> = ({ name, color }) => {
   const colorstring = color;
   return (
-    <div className="flex justify-between items-center w-[95%] h-10 m-3 bg-slate-200">
+    <div className="flex justify-between items-center w-[95%] h-14 m-3 bg-slate-200">
       <div
         className={`h-full w-4 
         ${color === "green" && "bg-green-300"} 

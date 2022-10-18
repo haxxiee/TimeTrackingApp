@@ -21,7 +21,7 @@ const Tasks: FC = () => {
           );
         })}
       <button className="bg-gray-400" onClick={() => setModal(true)}>
-        CREATE PROJECT
+        CREATE TASK
       </button>
 
       {modal && <CreateTaskModal setModal={setModal} />}
