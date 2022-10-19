@@ -30,7 +30,7 @@ const TimelogItem: FC<Props> = ({
 
   const [projectInfo, setProjectInfo] = useState<any>("");
   const [taskInfo, setTaskInfo] = useState<any>("");
-  const test2 = () => {
+  const getStateFromLocal = () => {
     const items = localStorage.getItem(`timer-${id}`);
 
     if (items === "false") return false;
@@ -38,7 +38,7 @@ const TimelogItem: FC<Props> = ({
 
     return false;
   };
-  const [timer, setTimer] = useState<boolean>(test2());
+  const [timer, setTimer] = useState<boolean>(getStateFromLocal());
 
   const { title } = taskInfo;
   const { color } = projectInfo;
@@ -72,13 +72,12 @@ const TimelogItem: FC<Props> = ({
     e.preventDefault();
 
     const date = new Date().toISOString();
-
     const test = timelogs.find((item) => item.id === id);
 
     if (!end) {
       const timelogObject = {
         end: date,
-        total: test.total + diffInSeconds(start, date),
+        total: test.total + diffInSeconds(start, date) + 1,
       };
 
       const newState = timelogs.map((obj) => {
@@ -86,26 +85,18 @@ const TimelogItem: FC<Props> = ({
           return {
             ...obj,
             end: date,
-            total: test.total + diffInSeconds(start, date),
+            total: test.total + diffInSeconds(start, date) + 1,
           };
         }
         return obj;
       });
-
       setTimelogs(newState);
-
       updateTimelog(timelogObject, id);
     }
-
     setTimer(false);
   };
 
   useEffect(() => {
-    const items = localStorage.getItem(`timer-${id}`);
-
-    if (items === "false") setTimer(false);
-    if (items === "true") setTimer(true);
-
     const task = getTaskFromId(taskId);
     setTaskInfo(task);
     const project = getProjectFromId(task.projectId);
@@ -126,8 +117,6 @@ const TimelogItem: FC<Props> = ({
       "0" + seconds
     ).slice(-2)}`;
   };
-
-  const test = (input: number) => {};
 
   return (
     <div className=" flex flex-col justify-center items-center w-[95%] m-auto">

@@ -39,7 +39,6 @@ const StoreProvider: FC<any> = ({ children }) => {
         customConfig
       )
       .then((res) => {
-        console.log(res);
         setProjects((prevstate) => [...prevstate, project]);
       });
   };
@@ -53,7 +52,6 @@ const StoreProvider: FC<any> = ({ children }) => {
     axios
       .post("http://localhost:3000/tasks", JSON.stringify(task), customConfig)
       .then((res) => {
-        console.log(res);
         setTasks((prevstate) => [...prevstate, task]);
       });
   };
@@ -70,7 +68,6 @@ const StoreProvider: FC<any> = ({ children }) => {
         customConfig
       )
       .then((res) => {
-        console.log(res);
         setTimelogs((prevstate) => [...prevstate, timelog]);
       });
   };
@@ -82,9 +79,7 @@ const StoreProvider: FC<any> = ({ children }) => {
         JSON.stringify(object),
         customConfig
       )
-      .then((res) => {
-        console.log(res);
-      });
+      .then((res) => {});
   };
 
   return (
