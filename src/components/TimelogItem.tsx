@@ -133,7 +133,7 @@ const TimelogItem: FC<Props> = ({
         ${color === "blue" && "bg-blue-300"}
         ${color === "purple" && "bg-purple-300"}
         ${color === "orange" && "bg-orange-300"}
-        overflow-hidden absolute left-0`}
+         absolute left-0`}
         />
         <div className="">{title}</div>
         {start && !timer ? (

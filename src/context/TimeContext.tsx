@@ -7,7 +7,7 @@ const TimeProvider: FC<any> = ({ children }) => {
   useEffect(() => {
     setInterval(() => {
       setTime(new Date().toISOString());
-    }, 900);
+    }, 1000);
   }, []);
 
   return (
