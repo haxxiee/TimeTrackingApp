@@ -57,6 +57,10 @@ const StoreProvider: FC<any> = ({ children }) => {
         setTasks((prevstate) => [...prevstate, task]);
       });
   };
+  const getTaskFromId = (taskId: string) => {
+    const task = tasks.find((item) => item.id === taskId);
+    return task;
+  };
 
   const createTimelog = (timelog: any) => {
     axios
@@ -81,6 +85,7 @@ const StoreProvider: FC<any> = ({ children }) => {
         getProjectFromId,
         createTask,
         createTimelog,
+        getTaskFromId,
       }}
     >
       {children}

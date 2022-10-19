@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CreateTimerModal from "../components/CreateTimerModal";
+import TimelogItem from "../components/TimelogItem";
 import { useStoreContext } from "../context";
 
 function Timer() {
@@ -27,16 +28,25 @@ function Timer() {
           +
         </div>
       </div>
-
-      {timelogs &&
-        timelogs
-          .slice(0)
-          .reverse()
-          .map((item) => {
-            const hehe = new Date(Date.parse(item.createdAt));
-            return <div key={item.id}>{hehe.toUTCString()}</div>;
-          })}
-
+      <div className="mt-2 mb-20">
+        {timelogs &&
+          timelogs
+            .slice(0)
+            .reverse()
+            .map((item) => {
+              const hehe = new Date(Date.parse(item.createdAt));
+              // return <TimelogItem key={item.id}>{hehe.toUTCString()}</TimelogItem>;
+              return (
+                <TimelogItem
+                  key={item.id}
+                  taskId={item.taskId}
+                  createdAt={item.createdAt}
+                  start={item.start}
+                  end={item.end}
+                />
+              );
+            })}
+      </div>
       <div>
         {timerHours(seconds)} hours {timerMinutes(seconds)} minutes{" "}
         {seconds % 60} seconds
