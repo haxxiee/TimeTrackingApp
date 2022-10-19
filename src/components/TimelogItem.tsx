@@ -1,37 +1,123 @@
-import { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { useStoreContext } from "../context";
+import { useTimeContext } from "../context/timeContext";
 
 interface Props {
+  id: string;
   taskId: string;
   createdAt: string;
   start: string | null;
   end: string | null;
+  total: number;
 }
 
-const TimelogItem: FC<Props> = ({ taskId, createdAt, start, end }) => {
-  const { getProjectFromId, getTaskFromId } = useStoreContext();
+const TimelogItem: FC<Props> = ({
+  id,
+  taskId,
+  createdAt,
+  start,
+  end,
+  total,
+}) => {
+  const {
+    getProjectFromId,
+    getTaskFromId,
+    timelogs,
+    setTimelogs,
+    updateTimelog,
+  } = useStoreContext();
+  const { time } = useTimeContext();
 
   const [projectInfo, setProjectInfo] = useState<any>("");
   const [taskInfo, setTaskInfo] = useState<any>("");
-  const [timer, setTimer] = useState<boolean>(false);
+  const test2 = () => {
+    const items = localStorage.getItem(`timer-${id}`);
+
+    if (items === "false") return false;
+    if (items === "true") return true;
+
+    return false;
+  };
+  const [timer, setTimer] = useState<boolean>(test2());
 
   const { title } = taskInfo;
   const { color } = projectInfo;
 
   useEffect(() => {
+    localStorage.setItem(`timer-${id}`, JSON.stringify(timer));
+  }, [timer]);
+
+  const onPlay = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const date = new Date().toISOString();
+
+    const timelogObject = {
+      start: date,
+      end: null,
+    };
+
+    const newState = timelogs.map((obj) => {
+      if (obj.id === id) {
+        return { ...obj, start: date, end: null };
+      }
+      return obj;
+    });
+    setTimelogs(newState);
+    updateTimelog(timelogObject, id);
+
+    setTimer(true);
+  };
+
+  const onPause = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+
+    const date = new Date().toISOString();
+
+    const test = timelogs.find((item) => item.id === id);
+
+    if (!end) {
+      const timelogObject = {
+        end: date,
+        total: test.total + diffInSeconds(start, date),
+      };
+
+      const newState = timelogs.map((obj) => {
+        if (obj.id === id) {
+          return {
+            ...obj,
+            end: date,
+            total: test.total + diffInSeconds(start, date),
+          };
+        }
+        return obj;
+      });
+
+      setTimelogs(newState);
+
+      updateTimelog(timelogObject, id);
+    }
+
+    setTimer(false);
+  };
+
+  useEffect(() => {
+    const items = localStorage.getItem(`timer-${id}`);
+
+    if (items === "false") setTimer(false);
+    if (items === "true") setTimer(true);
+
     const task = getTaskFromId(taskId);
     setTaskInfo(task);
     const project = getProjectFromId(task.projectId);
     setProjectInfo(project);
   }, []);
 
-  const diffInSeconds = (start, end) => {
+  let diffInSeconds = (start, end) => {
     let diff = Date.parse(end) - Date.parse(start);
     return Math.floor(diff / 1000);
   };
 
-  const timerFormat = () => {
-    let diff = diffInSeconds(start, end);
+  const timerFormat = (diff: number) => {
     let hours = Math.floor(diff / 3600);
     let minutes = Math.floor((diff / 60) % 60);
     let seconds = diff % 60;
@@ -40,6 +126,8 @@ const TimelogItem: FC<Props> = ({ taskId, createdAt, start, end }) => {
       "0" + seconds
     ).slice(-2)}`;
   };
+
+  const test = (input: number) => {};
 
   return (
     <div className=" flex flex-col justify-center items-center w-[95%] m-auto">
@@ -57,17 +145,21 @@ const TimelogItem: FC<Props> = ({ taskId, createdAt, start, end }) => {
         overflow-hidden absolute left-0`}
         />
         <div className="">{title}</div>
-        {start && end ? (
-          <p className="text-xs font-bold">{timerFormat()}</p>
+        {start && !timer ? (
+          <p className="text-xs font-bold">{timerFormat(total)}</p>
         ) : (
-          <p className="text-xs font-bold">00:00:00</p>
+          ""
+        )}
+
+        {!start && <p className="text-xs font-bold">00:00:00</p>}
+        {timer && (
+          <p className="text-xs font-bold">
+            {timerFormat(diffInSeconds(start, time) + 1 + total)}
+          </p>
         )}
 
         {timer ? (
-          <div
-            className="mr-2 absolute right-0"
-            onClick={() => setTimer(false)}
-          >
+          <div className="mr-2 absolute right-0" onClick={onPause}>
             <svg
               width="24"
               height="24"
@@ -86,7 +178,7 @@ const TimelogItem: FC<Props> = ({ taskId, createdAt, start, end }) => {
             </svg>
           </div>
         ) : (
-          <div className="mr-2 absolute right-0" onClick={() => setTimer(true)}>
+          <div className="mr-2 absolute right-0" onClick={onPlay}>
             <svg
               width="24"
               height="24"

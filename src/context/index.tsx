@@ -75,17 +75,31 @@ const StoreProvider: FC<any> = ({ children }) => {
       });
   };
 
+  const updateTimelog = (object: any, timelogId: any) => {
+    axios
+      .patch(
+        `http://localhost:3000/timelogs/${timelogId}`,
+        JSON.stringify(object),
+        customConfig
+      )
+      .then((res) => {
+        console.log(res);
+      });
+  };
+
   return (
     <StoreContext.Provider
       value={{
         projects,
         tasks,
         timelogs,
+        setTimelogs,
         createProject,
         getProjectFromId,
         createTask,
         createTimelog,
         getTaskFromId,
+        updateTimelog,
       }}
     >
       {children}

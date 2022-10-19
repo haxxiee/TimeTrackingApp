@@ -14,6 +14,11 @@
       "id": "95f07d23-81a1-4cd7-bb43-fd06dc0273a7",
       "name": "bosses project",
       "color": "blue"
+    },
+    {
+      "id": "c5b64650-356e-486f-bb7b-43b962e34065",
+      "name": "test",
+      "color": "green"
     }
   ],
   "tasks": [
@@ -43,57 +48,65 @@
       "id": "2a183463-59c3-4cbf-8ef2-4598cfd268e4",
       "taskId": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
       "createdAt": "2022-10-13T07:54:54.438Z",
-      "start": null,
-      "end": null
+      "start": "2022-10-19T12:58:49.958Z",
+      "end": "2022-10-19T12:58:54.444Z",
+      "total": 24
     },
     {
-      "id": "743372e5-e358-43d8-9dc3-479587c9b589",
+      "id": "eb49214c-faf3-44aa-b611-9ebf7a1e4378",
       "taskId": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
-      "createdAt": "2022-10-19T08:00:34.383Z",
-      "start": null,
-      "end": null
+      "createdAt": "2022-10-19T12:15:49.086Z",
+      "start": "2022-10-19T13:55:42.007Z",
+      "end": "2022-10-19T13:57:14.903Z",
+      "total": 271
     },
     {
-      "id": "93aef933-05f2-4fd9-89ce-ac36928ec7ba",
-      "taskId": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
-      "createdAt": "2022-10-19T08:28:53.491Z",
-      "start": null,
-      "end": null
-    },
-    {
-      "id": "40b043d5-2253-442e-9e53-2725f8f6e141",
-      "taskId": "20ea689d-aa1a-4cbe-8b67-5ba17b988c05",
-      "createdAt": "2022-10-19T08:55:09.189Z",
-      "start": null,
-      "end": null
-    },
-    {
-      "id": "0b1437f4-4ce6-4014-977f-a0ac39763a64",
-      "taskId": "20ea689d-aa1a-4cbe-8b67-5ba17b988c05",
-      "createdAt": "2022-10-19T09:17:12.750Z",
-      "start": null,
-      "end": null
-    },
-    {
-      "id": "0b6c4f1f-1770-4bc0-a877-4373e902cf05",
-      "taskId": "90634957-fadb-43e9-b040-7427bb2e036c",
-      "createdAt": "2022-10-19T09:18:12.668Z",
-      "start": null,
-      "end": null
-    },
-    {
-      "id": "06bc7a21-883b-4f1d-889f-0c43ad906f94",
+      "id": "76045811-63aa-4914-9e63-77b5af02cdf3",
       "taskId": "04cc4bad-b472-490b-a380-8e76035d258b",
-      "createdAt": "2022-10-19T09:18:58.625Z",
-      "start": null,
-      "end": null
+      "createdAt": "2022-10-19T12:30:05.814Z",
+      "start": "2022-10-19T12:59:58.991Z",
+      "end": "2022-10-19T13:00:01.244Z",
+      "total": 73
     },
     {
-      "id": "79165074-d288-42e3-a37b-505b65a31f44",
+      "id": "ea09b367-9d6b-46e9-806a-2623214852f9",
       "taskId": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
-      "createdAt": "2022-10-19T09:24:46.151Z",
-      "start": "2022-10-19T09:25:46.151Z",
-      "end": "2022-10-19T11:44:56.151Z"
+      "createdAt": "2022-10-19T13:00:56.827Z",
+      "start": "2022-10-19T13:41:04.774Z",
+      "end": "2022-10-19T13:41:23.729Z",
+      "total": 69
+    },
+    {
+      "id": "18836732-49d3-4e16-ab0c-97d41aec305d",
+      "taskId": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
+      "createdAt": "2022-10-19T13:04:03.335Z",
+      "start": "2022-10-19T13:45:04.642Z",
+      "end": "2022-10-19T13:46:24.315Z",
+      "total": 758
+    },
+    {
+      "id": "99fffd61-f6b4-40b5-a039-389974177273",
+      "taskId": "20ea689d-aa1a-4cbe-8b67-5ba17b988c05",
+      "createdAt": "2022-10-19T13:28:55.080Z",
+      "start": "2022-10-19T13:58:20.212Z",
+      "end": "2022-10-19T13:58:21.803Z",
+      "total": 298
+    },
+    {
+      "id": "26397ae2-4575-4935-ae04-e849b04592a2",
+      "taskId": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
+      "createdAt": "2022-10-19T13:46:22.916Z",
+      "start": "2022-10-19T13:58:08.158Z",
+      "end": "2022-10-19T13:58:18.964Z",
+      "total": 645
+    },
+    {
+      "id": "90e7b56d-100d-4d7d-8b8d-be6883fa994b",
+      "taskId": "90634957-fadb-43e9-b040-7427bb2e036c",
+      "createdAt": "2022-10-19T13:57:35.159Z",
+      "start": null,
+      "end": null,
+      "total": 0
     }
   ]
 }

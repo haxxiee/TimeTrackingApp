@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CreateTimerModal from "../components/CreateTimerModal";
 import TimelogItem from "../components/TimelogItem";
 import { useStoreContext } from "../context";
+import TimeProvider from "../context/timeContext";
 
 function Timer() {
   const { timelogs, tasks } = useStoreContext();
@@ -18,41 +19,45 @@ function Timer() {
   };
 
   return (
-    <div>
-      <div className="h-[40vh] bg-gray-300 relative text-center">
-        <h1>TIMER</h1>
-        <div
-          className="absolute top-0 right-2 text-3xl"
-          onClick={() => setModal(true)}
-        >
-          +
-        </div>
-      </div>
-      <div className="mt-2 mb-20">
-        {timelogs &&
-          timelogs
-            .slice(0)
-            .reverse()
-            .map((item) => {
-              const hehe = new Date(Date.parse(item.createdAt));
-              // return <TimelogItem key={item.id}>{hehe.toUTCString()}</TimelogItem>;
-              return (
-                <TimelogItem
-                  key={item.id}
-                  taskId={item.taskId}
-                  createdAt={item.createdAt}
-                  start={item.start}
-                  end={item.end}
-                />
-              );
-            })}
-      </div>
+    <TimeProvider>
       <div>
-        {timerHours(seconds)} hours {timerMinutes(seconds)} minutes{" "}
-        {seconds % 60} seconds
+        <div className="h-[40vh] bg-gray-300 relative text-center">
+          <h1>TIMER</h1>
+          <div
+            className="absolute top-0 right-2 text-3xl"
+            onClick={() => setModal(true)}
+          >
+            +
+          </div>
+        </div>
+        <div className="mt-2 mb-20">
+          {timelogs &&
+            timelogs
+              .slice(0)
+              .reverse()
+              .map((item) => {
+                const hehe = new Date(Date.parse(item.createdAt));
+                // return <TimelogItem key={item.id}>{hehe.toUTCString()}</TimelogItem>;
+                return (
+                  <TimelogItem
+                    key={item.id}
+                    id={item.id}
+                    taskId={item.taskId}
+                    createdAt={item.createdAt}
+                    start={item.start}
+                    end={item.end}
+                    total={item.total}
+                  />
+                );
+              })}
+        </div>
+        <div>
+          {timerHours(seconds)} hours {timerMinutes(seconds)} minutes{" "}
+          {seconds % 60} seconds
+        </div>
+        {modal && <CreateTimerModal setModal={setModal} />}
       </div>
-      {modal && <CreateTimerModal setModal={setModal} />}
-    </div>
+    </TimeProvider>
   );
 }
 

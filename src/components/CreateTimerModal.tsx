@@ -19,6 +19,7 @@ const CreateTimerModal: FC<Props> = ({ setModal }) => {
       createdAt: new Date().toISOString(),
       start: null,
       end: null,
+      total: 0,
     };
 
     console.log(timelogObject);
