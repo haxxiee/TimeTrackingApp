@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { useStoreContext } from "../context";
 import { useTimeContext } from "../context/timeContext";
+import Loading from "./Loading";
 
 interface Props {
   id: string;
@@ -113,6 +114,7 @@ const TimelogItem: FC<Props> = ({
     let minutes = Math.floor((diff / 60) % 60);
     let seconds = diff % 60;
 
+    if (isNaN(diff)) return <Loading size={4} color={color} />;
     return `${("0" + hours).slice(-2)}:${("0" + minutes).slice(-2)}:${(
       "0" + seconds
     ).slice(-2)}`;
@@ -135,16 +137,16 @@ const TimelogItem: FC<Props> = ({
         />
         <div className="">{title}</div>
         {start && !timer ? (
-          <p className="text-xs font-bold">{timerFormat(total)}</p>
+          <div className="text-xs font-bold">{timerFormat(total)}</div>
         ) : (
           ""
         )}
 
         {!start && <p className="text-xs font-bold">00:00:00</p>}
         {timer && (
-          <p className="text-xs font-bold">
+          <div className="text-xs font-bold">
             {timerFormat(diffInSeconds(start, time) + 1 + total)}
-          </p>
+          </div>
         )}
 
         {timer ? (
