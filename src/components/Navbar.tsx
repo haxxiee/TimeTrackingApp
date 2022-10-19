@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar: FC = () => {
   return (
-    <div className="flex w-full h-20 bg-indigo-800/30 fixed top-auto bottom-0 rounded-tr-lg rounded-tl-lg">
+    <div className="flex w-full h-20 bg-indigo-300 fixed top-auto bottom-0 rounded-tr-lg rounded-tl-lg">
       <div className="flex justify-center items-center m-auto gap-20 text-gray-800">
         <NavLink
           to="/timer"

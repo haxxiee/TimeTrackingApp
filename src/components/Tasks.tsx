@@ -8,21 +8,24 @@ const Tasks: FC = () => {
   const { tasks } = useStoreContext();
   return (
     <div className="flex flex-col justify-center items-center">
-      <h1 className="text-lg font-semibold my-2">TASKS</h1>
-
-      {tasks &&
-        tasks.map((item: any) => {
-          return (
-            <TaskItem
-              key={item.id}
-              projectId={item.projectId}
-              title={item.title}
-            />
-          );
-        })}
-      <button className="bg-gray-400" onClick={() => setModal(true)}>
-        CREATE TASK
+      <button
+        className="mt-4 p-2 font-semibold border-2 border-indigo-300 rounded-xl"
+        onClick={() => setModal(true)}
+      >
+        Create Task
       </button>
+      <div className="flex flex-col justify-center items-center w-full mb-20">
+        {tasks &&
+          tasks.map((item: any) => {
+            return (
+              <TaskItem
+                key={item.id}
+                projectId={item.projectId}
+                title={item.title}
+              />
+            );
+          })}
+      </div>
 
       {modal && <CreateTaskModal setModal={setModal} />}
     </div>

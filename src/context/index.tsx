@@ -49,9 +49,39 @@ const StoreProvider: FC<any> = ({ children }) => {
     return project;
   };
 
+  const createTask = (task: any) => {
+    axios
+      .post("http://localhost:3000/tasks", JSON.stringify(task), customConfig)
+      .then((res) => {
+        console.log(res);
+        setTasks((prevstate) => [...prevstate, task]);
+      });
+  };
+
+  const createTimelog = (timelog: any) => {
+    axios
+      .post(
+        "http://localhost:3000/timelogs",
+        JSON.stringify(timelog),
+        customConfig
+      )
+      .then((res) => {
+        console.log(res);
+        setTimelogs((prevstate) => [...prevstate, timelog]);
+      });
+  };
+
   return (
     <StoreContext.Provider
-      value={{ projects, tasks, timelogs, createProject, getProjectFromId }}
+      value={{
+        projects,
+        tasks,
+        timelogs,
+        createProject,
+        getProjectFromId,
+        createTask,
+        createTimelog,
+      }}
     >
       {children}
     </StoreContext.Provider>

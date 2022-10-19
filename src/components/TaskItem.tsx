@@ -18,7 +18,7 @@ const TaskItem: FC<Props> = ({ projectId, title }) => {
   }, []);
 
   return (
-    <div className=" flex flex-col justify-center items-center w-[95%]">
+    <div className=" flex flex-col justify-center items-center w-[95%] m-3">
       <div className="flex justify-between items-center w-full h-10 mb-3 bg-slate-200">
         <div
           className={`h-full w-4 

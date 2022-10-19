@@ -6,27 +6,25 @@ import ProjectItem from "./ProjectItem";
 
 const Projects: FC = () => {
   const [modal, setModal] = useState<boolean>(false);
-  const { projects, createProject } = useStoreContext();
-
-  const test = {
-    id: uuidv4(),
-    name: `Projekt nr 5`,
-    color: "red",
-  };
+  const { projects } = useStoreContext();
 
   if (!projects) return <div>Loading..</div>;
   return (
     <div className="flex flex-col justify-center items-center">
-      <h1 className="text-lg font-semibold my-2">PROJECTS</h1>
-      {projects &&
-        projects.map((item: any) => {
-          return (
-            <ProjectItem key={item.id} name={item.name} color={item.color} />
-          );
-        })}
-      <button className="bg-gray-400" onClick={() => setModal(true)}>
-        CREATE PROJECT
+      <button
+        className="mt-4 p-2 font-semibold border-2 border-indigo-300 rounded-xl"
+        onClick={() => setModal(true)}
+      >
+        Create Project
       </button>
+      <div className="flex flex-col justify-center items-center w-full mb-20">
+        {projects &&
+          projects.map((item: any) => {
+            return (
+              <ProjectItem key={item.id} name={item.name} color={item.color} />
+            );
+          })}
+      </div>
 
       {modal && <CreateProjectModal setModal={setModal} />}
     </div>

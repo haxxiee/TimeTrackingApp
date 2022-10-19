@@ -6,49 +6,72 @@
       "color": "green"
     },
     {
-      "id": "d7a4d129-a55c-4811-9bcc-12321321323",
-      "name": "Projekt nr 2",
-      "color": "red"
-    },
-    {
-      "id": "d7a4d129-a55c-4811-9bcc-1232132132311",
-      "name": "Projekt nr 3",
-      "color": "blue"
-    },
-    {
-      "id": "33123e3c-19cd-4c84-9442-551153e4ef8e",
-      "name": "Projekt nr 3",
-      "color": "red"
+      "id": "2a259651-e6eb-4500-8867-2560d3f256ac",
+      "name": "Bosses Project",
+      "color": "purple"
     }
   ],
   "tasks": [
     {
-      "id": "d65e8340-c229-47b4-8433-848ee015255a",
+      "id": "20ea689d-aa1a-4cbe-8b67-5ba17b988c05",
+      "projectId": "2a259651-e6eb-4500-8867-2560d3f256ac",
+      "title": "Clean Room"
+    },
+    {
+      "id": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
       "projectId": "d7a4d129-a55c-4811-9bcc-df56b18d2979",
-      "title": "Läsa genom Reacts nya dokumentation"
+      "title": "Cool new"
     }
   ],
   "timelogs": [
     {
       "id": "eea47815-b263-4047-9565-885b109e9919",
-      "taskId": "a133e947-5a93-4550-a96d-c4ec365678a5",
+      "taskId": "20ea689d-aa1a-4cbe-8b67-5ba17b988c05",
       "createdAt": "2022-10-12T10:49:33.081Z",
       "start": "2022-10-12T10:49:33.081Z",
       "end": "2022-10-12T10:49:33.081Z"
     },
     {
       "id": "2999e774-8f6b-4fb9-a47f-7581590ade4d",
-      "taskId": "a133e947-5a93-4550-a96d-c4ec365678a5",
+      "taskId": "20ea689d-aa1a-4cbe-8b67-5ba17b988c05",
       "createdAt": "2022-10-12T10:49:33.081Z",
       "start": "2022-10-12T10:49:33.081Z",
       "end": "2022-10-12T10:49:33.081Z"
     },
     {
       "id": "6d234d45-d693-467b-81a1-c8336a2d1ad1",
-      "taskId": "a133e947-5a93-4550-a96d-c4ec365678a5",
+      "taskId": "20ea689d-aa1a-4cbe-8b67-5ba17b988c05",
       "createdAt": "2022-10-12T10:49:33.081Z",
       "start": "2022-10-12T10:49:33.081Z",
       "end": "2022-10-12T10:49:33.081Z"
+    },
+    {
+      "id": "2a183463-59c3-4cbf-8ef2-4598cfd268e4",
+      "taskId": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
+      "createdAt": "2022-10-19T07:54:54.438Z",
+      "start": null,
+      "end": null
+    },
+    {
+      "id": "89b65143-a858-4078-be01-91f5105d35b5",
+      "taskId": "",
+      "createdAt": "2022-10-19T07:58:27.869Z",
+      "start": null,
+      "end": null
+    },
+    {
+      "id": "743372e5-e358-43d8-9dc3-479587c9b589",
+      "taskId": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
+      "createdAt": "2022-10-19T08:00:34.383Z",
+      "start": null,
+      "end": null
+    },
+    {
+      "id": "93aef933-05f2-4fd9-89ce-ac36928ec7ba",
+      "taskId": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
+      "createdAt": "2022-10-19T08:28:53.491Z",
+      "start": null,
+      "end": null
     }
   ]
 }

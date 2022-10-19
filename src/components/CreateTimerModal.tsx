@@ -6,23 +6,23 @@ interface Props {
   setModal: (modal: boolean) => void;
 }
 
-const CreateTaskModal: FC<Props> = ({ setModal }) => {
-  const { projects, createTask } = useStoreContext();
-  const [selectProjectId, setSelectProjectId] = useState<string>("");
-  const [taskTitle, setTaskTitle] = useState<string>("");
+const CreateTimerModal: FC<Props> = ({ setModal }) => {
+  const { tasks, createTimelog } = useStoreContext();
+  const [selectTaskId, setSelectTaskId] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const taskObject = {
+    const timelogObject = {
       id: uuidv4(),
-      projectId: selectProjectId || projects[0].id,
-      title: taskTitle,
+      taskId: selectTaskId || tasks[0].id,
+      createdAt: new Date().toISOString(),
+      start: null,
+      end: null,
     };
 
-    console.log(taskObject);
-    createTask(taskObject);
-    setTaskTitle("");
+    console.log(timelogObject);
+    createTimelog(timelogObject);
     setModal(false);
   };
 
@@ -34,39 +34,22 @@ const CreateTaskModal: FC<Props> = ({ setModal }) => {
       />
 
       <form
-        className="w-4/5 h-2/3 bg-slate-100 flex flex-col items-center rounded-md z-20 relative"
+        className="w-4/5 h-1/3 bg-slate-100 flex flex-col items-center rounded-md z-20 relative"
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col justify-center items-center mt-14">
+        <div className="flex flex-col justify-center items-center mt-10">
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-            Task name
-          </label>
-          <div>
-            <input
-              type="text"
-              id="task_name"
-              className="bg-white border border-gray-400 text-gray-900 text-sm rounded-lg block w-full p-2.5 shadow"
-              placeholder="Example Task"
-              required
-              value={taskTitle}
-              onChange={(e) => setTaskTitle(e.target.value)}
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-col justify-center items-center mt-5">
-          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-            Select project
+            Select task
           </label>
           <div className="inline-block relative w-40">
             <select
               className="block appearance-none w-full bg-white border border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
-              onChange={(e) => setSelectProjectId(e.target.value)}
+              onChange={(e) => setSelectTaskId(e.target.value)}
             >
-              {projects.map((item) => {
+              {tasks.map((item) => {
                 return (
                   <option key={item.id} value={item.id}>
-                    {item.name}
+                    {item.title}
                   </option>
                 );
               })}
@@ -85,13 +68,13 @@ const CreateTaskModal: FC<Props> = ({ setModal }) => {
 
         <div className="flex gap-2 w-[90%] absolute bottom-10">
           <button
-            className="bg-green-600 p-3 rounded-md mt-10 w-full text-white font-semibold"
+            className="bg-green-600 p-2 rounded-md mt-10 w-full text-white font-semibold"
             type="submit"
           >
             Create
           </button>
           <button
-            className="bg-red-500 p-3 rounded-md mt-10 w-full text-white font-semibold"
+            className="bg-red-500 p-2 rounded-md mt-10 w-full text-white font-semibold"
             type="button"
             onClick={() => setModal(false)}
           >
@@ -103,4 +86,4 @@ const CreateTaskModal: FC<Props> = ({ setModal }) => {
   );
 };
 
-export default CreateTaskModal;
+export default CreateTimerModal;
