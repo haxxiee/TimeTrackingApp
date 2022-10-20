@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { useStoreContext } from "../context";
-import { useTimeContext } from "../context/timeContext";
+import { useTimeContext } from "../context/TimeContext";
 import Loading from "./Loading";
 
 interface Props {
@@ -27,7 +27,7 @@ const TimelogItem: FC<Props> = ({
     setTimelogs,
     updateTimelog,
   } = useStoreContext();
-  const { time } = useTimeContext();
+  const { time, setCurrentTimer, setIsActive, currentTimer } = useTimeContext();
 
   const [projectInfo, setProjectInfo] = useState<any>("");
   const [taskInfo, setTaskInfo] = useState<any>("");
@@ -66,6 +66,16 @@ const TimelogItem: FC<Props> = ({
     setTimelogs(newState);
     updateTimelog(timelogObject, id);
 
+    setCurrentTimer({
+      id: id,
+      taskId: taskId,
+      createdAt: createdAt,
+      start: date,
+      end: null,
+      total: total,
+    });
+
+    setIsActive(true);
     setTimer(true);
   };
 
@@ -94,6 +104,25 @@ const TimelogItem: FC<Props> = ({
       setTimelogs(newState);
       updateTimelog(timelogObject, id);
     }
+    console.log(
+      timerFormat(test.total + diffInSeconds(start, date) + 1),
+      test.total + diffInSeconds(start, date) + 1,
+      "total:",
+      total,
+      diffInSeconds(start, date)
+    );
+
+    setCurrentTimer({
+      id: id,
+      taskId: taskId,
+      createdAt: createdAt,
+      start: start,
+      end: date,
+      total: test.total + diffInSeconds(start, date) + 1,
+    });
+
+    console.log(currentTimer.total);
+    setIsActive(false);
     setTimer(false);
   };
 
@@ -104,7 +133,7 @@ const TimelogItem: FC<Props> = ({
     setProjectInfo(project);
   }, []);
 
-  let diffInSeconds = (start, end) => {
+  const diffInSeconds = (start, end) => {
     let diff = Date.parse(end) - Date.parse(start);
     return Math.floor(diff / 1000);
   };
@@ -118,6 +147,19 @@ const TimelogItem: FC<Props> = ({
     return `${("0" + hours).slice(-2)}:${("0" + minutes).slice(-2)}:${(
       "0" + seconds
     ).slice(-2)}`;
+  };
+
+  const objectClick = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    setCurrentTimer({
+      id: id,
+      taskId: taskId,
+      createdAt: createdAt,
+      start: start,
+      end: end,
+      total: total,
+    });
+    console.log("YOOOOO");
   };
 
   return (
@@ -135,7 +177,9 @@ const TimelogItem: FC<Props> = ({
         ${color === "orange" && "bg-orange-300"}
          absolute left-0`}
         />
-        <div className="">{title}</div>
+        <div className="" onClick={objectClick}>
+          {title}
+        </div>
         {start && !timer ? (
           <div className="text-xs font-bold">{timerFormat(total)}</div>
         ) : (

@@ -4,6 +4,9 @@ export const TimeContext = createContext<any | null>(null);
 
 const TimeProvider: FC<any> = ({ children }) => {
   const [time, setTime] = useState<any>();
+  const [currentTimer, setCurrentTimer] = useState<any>();
+  const [isActive, setIsActive] = useState<any>();
+
   useEffect(() => {
     setInterval(() => {
       setTime(new Date().toISOString());
@@ -11,7 +14,11 @@ const TimeProvider: FC<any> = ({ children }) => {
   }, []);
 
   return (
-    <TimeContext.Provider value={{ time }}>{children}</TimeContext.Provider>
+    <TimeContext.Provider
+      value={{ time, setCurrentTimer, currentTimer, isActive, setIsActive }}
+    >
+      {children}
+    </TimeContext.Provider>
   );
 };
 

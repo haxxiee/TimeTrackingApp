@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import CreateTimerModal from "../components/CreateTimerModal";
 import TimelogItem from "../components/TimelogItem";
+import TimerInfo from "../components/TimerInfo";
 import { useStoreContext } from "../context";
-import TimeProvider from "../context/timeContext";
+import TimeProvider from "../context/TimeContext";
 
 function Timer() {
   const { timelogs, tasks } = useStoreContext();
@@ -11,16 +12,7 @@ function Timer() {
   return (
     <TimeProvider>
       <div>
-        <div className="h-[40vh] bg-gray-300 relative text-center">
-          <h1>TIMER</h1>
-          <>INFO SOM VISAS HÄR SKA SYNAS PÅ STATE/context, onClick, byt state</>
-          <div
-            className="absolute top-0 right-2 text-3xl"
-            onClick={() => setModal(true)}
-          >
-            +
-          </div>
-        </div>
+        <TimerInfo setModal={setModal} />
         <div className="mt-2 mb-20">
           {timelogs &&
             timelogs

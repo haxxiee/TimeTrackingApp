@@ -22,7 +22,6 @@ const CreateTimerModal: FC<Props> = ({ setModal }) => {
       total: 0,
     };
 
-    console.log(timelogObject);
     createTimelog(timelogObject);
     setModal(false);
   };

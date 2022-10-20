@@ -1,136 +1,65 @@
 {
   "projects": [
     {
-      "id": "d7a4d129-a55c-4811-9bcc-df56b18d2979",
-      "name": "Projekt nr 1",
-      "color": "green"
-    },
-    {
-      "id": "2a259651-e6eb-4500-8867-2560d3f256ac",
-      "name": "Bosses Project",
+      "id": "be01b16d-51f4-40ff-a1f5-defc0210acc3",
+      "name": "House",
       "color": "purple"
     },
     {
-      "id": "95f07d23-81a1-4cd7-bb43-fd06dc0273a7",
-      "name": "bosses project",
-      "color": "blue"
-    },
-    {
-      "id": "c5b64650-356e-486f-bb7b-43b962e34065",
-      "name": "test",
-      "color": "green"
+      "id": "4da1b2c5-567a-4e3b-bdcd-f0b6f26bb5f4",
+      "name": "School",
+      "color": "orange"
     }
   ],
   "tasks": [
     {
-      "id": "20ea689d-aa1a-4cbe-8b67-5ba17b988c05",
-      "projectId": "2a259651-e6eb-4500-8867-2560d3f256ac",
-      "title": "Clean Room"
+      "id": "a9dd973a-6c07-4a22-b827-6852630ef83b",
+      "projectId": "be01b16d-51f4-40ff-a1f5-defc0210acc3",
+      "title": "Doing dishes"
     },
     {
-      "id": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
-      "projectId": "d7a4d129-a55c-4811-9bcc-df56b18d2979",
-      "title": "Cool new"
+      "id": "196b2c3f-8f6f-4ee4-8578-fa25094bad84",
+      "projectId": "be01b16d-51f4-40ff-a1f5-defc0210acc3",
+      "title": "Cleaning room"
     },
     {
-      "id": "90634957-fadb-43e9-b040-7427bb2e036c",
-      "projectId": "2a259651-e6eb-4500-8867-2560d3f256ac",
-      "title": "Laga mat"
-    },
-    {
-      "id": "04cc4bad-b472-490b-a380-8e76035d258b",
-      "projectId": "95f07d23-81a1-4cd7-bb43-fd06dc0273a7",
-      "title": "hehehe"
+      "id": "08c43508-1f7b-42c7-95c1-f3560d8a459e",
+      "projectId": "4da1b2c5-567a-4e3b-bdcd-f0b6f26bb5f4",
+      "title": "Study"
     }
   ],
   "timelogs": [
     {
-      "id": "2a183463-59c3-4cbf-8ef2-4598cfd268e4",
-      "taskId": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
-      "createdAt": "2022-10-13T07:54:54.438Z",
-      "start": "2022-10-19T12:58:49.958Z",
-      "end": "2022-10-19T12:58:54.444Z",
-      "total": 24
+      "id": "d806c9d5-65bd-4326-b481-979a964da2fc",
+      "taskId": "08c43508-1f7b-42c7-95c1-f3560d8a459e",
+      "createdAt": "2022-10-20T08:22:03.789Z",
+      "start": "2022-10-20T11:08:42.370Z",
+      "end": "2022-10-20T11:08:49.648Z",
+      "total": 1057
     },
     {
-      "id": "eb49214c-faf3-44aa-b611-9ebf7a1e4378",
-      "taskId": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
-      "createdAt": "2022-10-19T12:15:49.086Z",
-      "start": "2022-10-19T13:55:42.007Z",
-      "end": "2022-10-19T13:57:14.903Z",
-      "total": 271
+      "id": "57a89eb6-7918-45b3-b506-0148c06d539c",
+      "taskId": "196b2c3f-8f6f-4ee4-8578-fa25094bad84",
+      "createdAt": "2022-10-20T08:26:55.381Z",
+      "start": "2022-10-20T11:12:34.933Z",
+      "end": "2022-10-20T11:12:44.623Z",
+      "total": 883
     },
     {
-      "id": "76045811-63aa-4914-9e63-77b5af02cdf3",
-      "taskId": "04cc4bad-b472-490b-a380-8e76035d258b",
-      "createdAt": "2022-10-19T12:30:05.814Z",
-      "start": "2022-10-19T16:12:33.058Z",
-      "end": "2022-10-19T16:12:39.851Z",
-      "total": 83
+      "id": "86f50e5a-5681-4ff3-9aba-013442aeb7f2",
+      "taskId": "196b2c3f-8f6f-4ee4-8578-fa25094bad84",
+      "createdAt": "2022-10-20T09:06:55.374Z",
+      "start": "2022-10-20T11:12:30.301Z",
+      "end": "2022-10-20T11:12:39.926Z",
+      "total": 629
     },
     {
-      "id": "ea09b367-9d6b-46e9-806a-2623214852f9",
-      "taskId": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
-      "createdAt": "2022-10-19T13:00:56.827Z",
-      "start": "2022-10-19T14:18:27.120Z",
-      "end": "2022-10-19T14:18:49.374Z",
-      "total": 92
-    },
-    {
-      "id": "18836732-49d3-4e16-ab0c-97d41aec305d",
-      "taskId": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
-      "createdAt": "2022-10-19T13:04:03.335Z",
-      "start": "2022-10-19T14:29:41.850Z",
-      "end": "2022-10-19T14:29:44.648Z",
-      "total": 782
-    },
-    {
-      "id": "99fffd61-f6b4-40b5-a039-389974177273",
-      "taskId": "20ea689d-aa1a-4cbe-8b67-5ba17b988c05",
-      "createdAt": "2022-10-19T13:28:55.080Z",
-      "start": "2022-10-19T14:41:14.097Z",
-      "end": "2022-10-19T14:41:20.613Z",
-      "total": 327
-    },
-    {
-      "id": "26397ae2-4575-4935-ae04-e849b04592a2",
-      "taskId": "ebc2d72e-b94b-4253-a378-8b45929b6fe4",
-      "createdAt": "2022-10-19T13:46:22.916Z",
-      "start": "2022-10-19T16:28:57.605Z",
-      "end": "2022-10-19T16:29:03.144Z",
-      "total": 992
-    },
-    {
-      "id": "90e7b56d-100d-4d7d-8b8d-be6883fa994b",
-      "taskId": "90634957-fadb-43e9-b040-7427bb2e036c",
-      "createdAt": "2022-10-19T13:57:35.159Z",
-      "start": "2022-10-19T16:36:18.275Z",
-      "end": "2022-10-19T16:36:19.902Z",
-      "total": 1510
-    },
-    {
-      "id": "05edf13d-e0d7-425c-8fea-d6a240eb6f53",
-      "taskId": "20ea689d-aa1a-4cbe-8b67-5ba17b988c05",
-      "createdAt": "2022-10-19T14:35:25.768Z",
-      "start": "2022-10-19T16:36:10.244Z",
-      "end": "2022-10-19T16:36:20.713Z",
-      "total": 4660
-    },
-    {
-      "id": "a91765d3-b132-422b-bdff-68447a1f461b",
-      "taskId": "20ea689d-aa1a-4cbe-8b67-5ba17b988c05",
-      "createdAt": "2022-10-19T16:36:23.463Z",
-      "start": "2022-10-19T18:00:58.949Z",
-      "end": "2022-10-19T18:01:03.003Z",
-      "total": 32
-    },
-    {
-      "id": "36f69488-2f03-468c-8d11-f6f6f353890d",
-      "taskId": "90634957-fadb-43e9-b040-7427bb2e036c",
-      "createdAt": "2022-10-19T16:36:45.847Z",
-      "start": "2022-10-19T18:12:34.613Z",
-      "end": "2022-10-19T18:12:57.109Z",
-      "total": 2778
+      "id": "27f1dfcb-43a3-49f2-a33a-889a162f883c",
+      "taskId": "08c43508-1f7b-42c7-95c1-f3560d8a459e",
+      "createdAt": "2022-10-20T10:57:37.195Z",
+      "start": "2022-10-20T11:12:25.431Z",
+      "end": "2022-10-20T11:12:39.058Z",
+      "total": 227
     }
   ]
 }
