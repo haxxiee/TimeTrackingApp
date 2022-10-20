@@ -21,7 +21,7 @@ const TimerInfo: FC<Props> = ({ setModal }) => {
     let minutes = Math.floor((diff / 60) % 60);
     let seconds = diff % 60;
 
-    if (isNaN(diff)) return <Loading size={4} color={"blue"} />;
+    if (isNaN(diff)) return;
     return `${("0" + hours).slice(-2)}:${("0" + minutes).slice(-2)}:${(
       "0" + seconds
     ).slice(-2)}`;
@@ -31,21 +31,21 @@ const TimerInfo: FC<Props> = ({ setModal }) => {
     <div className="flex flex-col h-[40vh] bg-gray-300 relative text-center">
       <h1>TIMER</h1>
 
-      {!isActive && timelogs ? (
-        <div className="mt-20">{timerFormat(currentTimer.total)}</div>
+      {!isActive?.status && currentTimer?.id === !isActive?.id ? (
+        <div className="mt-20">{timerFormat(currentTimer?.total)}</div>
       ) : (
         ""
       )}
-      {!currentTimer && <div className="mt-20">00:00:00</div>}
+      {/* {!currentTimer && <div className="mt-20">00:00:00</div>} */}
 
-      {isActive && timelogs ? (
+      {isActive?.status && currentTimer?.id === isActive?.id ? (
         <div className="mt-20">
           {timerFormat(
-            diffInSeconds(currentTimer.start, time) + 1 + currentTimer.total
+            diffInSeconds(currentTimer?.start, time) + 1 + currentTimer?.total
           )}
         </div>
       ) : (
-        ""
+        <div className="mt-20">{timerFormat(currentTimer?.total)}</div>
       )}
 
       <p>Task name</p>

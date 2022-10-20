@@ -27,7 +27,7 @@ const TimelogItem: FC<Props> = ({
     setTimelogs,
     updateTimelog,
   } = useStoreContext();
-  const { time, setCurrentTimer, setIsActive, currentTimer } = useTimeContext();
+  const { time, setCurrentTimer, setIsActive } = useTimeContext();
 
   const [projectInfo, setProjectInfo] = useState<any>("");
   const [taskInfo, setTaskInfo] = useState<any>("");
@@ -40,7 +40,6 @@ const TimelogItem: FC<Props> = ({
     return false;
   };
   const [timer, setTimer] = useState<boolean>(getStateFromLocal());
-
   const { title } = taskInfo;
   const { color } = projectInfo;
 
@@ -75,7 +74,7 @@ const TimelogItem: FC<Props> = ({
       total: total,
     });
 
-    setIsActive(true);
+    setIsActive({ id: id, status: true });
     setTimer(true);
   };
 
@@ -104,13 +103,6 @@ const TimelogItem: FC<Props> = ({
       setTimelogs(newState);
       updateTimelog(timelogObject, id);
     }
-    console.log(
-      timerFormat(test.total + diffInSeconds(start, date) + 1),
-      test.total + diffInSeconds(start, date) + 1,
-      "total:",
-      total,
-      diffInSeconds(start, date)
-    );
 
     setCurrentTimer({
       id: id,
@@ -121,8 +113,7 @@ const TimelogItem: FC<Props> = ({
       total: test.total + diffInSeconds(start, date) + 1,
     });
 
-    console.log(currentTimer.total);
-    setIsActive(false);
+    setIsActive({ id: id, status: false });
     setTimer(false);
   };
 
@@ -160,6 +151,8 @@ const TimelogItem: FC<Props> = ({
       total: total,
     });
     console.log("YOOOOO");
+
+    setIsActive({ status: getStateFromLocal(), id: id });
   };
 
   return (
