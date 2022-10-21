@@ -1,7 +1,6 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { useStoreContext } from "../context";
 import { useTimeContext } from "../context/TimeContext";
-import Loading from "./Loading";
 
 interface Props {
   setModal: (modal: boolean) => void;
@@ -36,7 +35,6 @@ const TimerInfo: FC<Props> = ({ setModal }) => {
       ) : (
         ""
       )}
-      {/* {!currentTimer && <div className="mt-20">00:00:00</div>} */}
 
       {isActive?.status && currentTimer?.id === isActive?.id ? (
         <div className="mt-20">
