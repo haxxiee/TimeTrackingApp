@@ -7,14 +7,17 @@ interface Props {
 }
 
 const CreateTimerModal: FC<Props> = ({ setModal }) => {
-  const { tasks, createTimelog } = useStoreContext();
+  const { tasks, createTimelog, getTaskFromId } = useStoreContext();
   const [selectTaskId, setSelectTaskId] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    const project = getTaskFromId(selectTaskId || tasks[0].id);
+
     const timelogObject = {
       id: uuidv4(),
+      projectId: project.projectId,
       taskId: selectTaskId || tasks[0].id,
       createdAt: new Date().toISOString(),
       start: null,
