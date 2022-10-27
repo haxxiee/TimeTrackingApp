@@ -1,5 +1,27 @@
 {
-  "projects": [],
-  "tasks": [],
-  "timelogs": []
+  "projects": [
+    {
+      "id": "54c2881f-7b71-494f-bf5f-222d5c1d745d",
+      "name": "School",
+      "color": "red"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "95f65be6-3a2e-4460-95e8-fcd2b73d8cc8",
+      "projectId": "54c2881f-7b71-494f-bf5f-222d5c1d745d",
+      "title": "Study"
+    }
+  ],
+  "timelogs": [
+    {
+      "id": "780cc531-bd78-4abc-a149-42b3df9f04fe",
+      "projectId": "54c2881f-7b71-494f-bf5f-222d5c1d745d",
+      "taskId": "95f65be6-3a2e-4460-95e8-fcd2b73d8cc8",
+      "createdAt": "2022-10-27T14:01:20.847Z",
+      "start": null,
+      "end": null,
+      "total": 0
+    }
+  ]
 }

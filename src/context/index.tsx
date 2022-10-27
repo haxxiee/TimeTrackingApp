@@ -14,15 +14,9 @@ const StoreProvider: FC<any> = ({ children }) => {
   const [timelogs, setTimelogs] = useState<any>();
 
   useEffect(() => {
-    axios.get("http://localhost:3000/projects").then((res) => {
-      setProjects(res.data);
-    });
-    axios.get("http://localhost:3000/tasks").then((res) => {
-      setTasks(res.data);
-    });
-    axios.get("http://localhost:3000/timelogs").then((res) => {
-      setTimelogs(res.data);
-    });
+    getProjects();
+    getTasks();
+    getTimelogs();
   }, []);
 
   const customConfig = {
@@ -48,6 +42,15 @@ const StoreProvider: FC<any> = ({ children }) => {
     return project;
   };
 
+  const deleteProject = (id: any) => {
+    if (!id) return;
+    axios.delete(`http://localhost:3000/projects/${id}`).then((res) => {
+      getProjects();
+      getTasks();
+      getTimelogs();
+    });
+  };
+
   const createTask = (task: any) => {
     axios
       .post("http://localhost:3000/tasks", JSON.stringify(task), customConfig)
@@ -58,6 +61,14 @@ const StoreProvider: FC<any> = ({ children }) => {
   const getTaskFromId = (taskId: string) => {
     const task = tasks.find((item) => item.id === taskId);
     return task;
+  };
+
+  const deleteTask = (id: any) => {
+    if (!id) return;
+    axios.delete(`http://localhost:3000/tasks/${id}`).then((res) => {
+      getTasks();
+      getTimelogs();
+    });
   };
 
   const createTimelog = (timelog: any) => {
@@ -82,6 +93,30 @@ const StoreProvider: FC<any> = ({ children }) => {
       .then((res) => {});
   };
 
+  const deleteTimelog = (id: any) => {
+    if (!id) return;
+    axios.delete(`http://localhost:3000/timelogs/${id}`).then((res) => {
+      getTimelogs();
+    });
+  };
+
+  const getProjects = () => {
+    axios.get("http://localhost:3000/projects").then((res) => {
+      setProjects(res.data);
+    });
+  };
+  const getTasks = () => {
+    axios.get("http://localhost:3000/tasks").then((res) => {
+      setTasks(res.data);
+    });
+  };
+
+  const getTimelogs = () => {
+    axios.get("http://localhost:3000/timelogs").then((res) => {
+      setTimelogs(res.data);
+    });
+  };
+
   return (
     <StoreContext.Provider
       value={{
@@ -95,6 +130,9 @@ const StoreProvider: FC<any> = ({ children }) => {
         createTimelog,
         getTaskFromId,
         updateTimelog,
+        deleteTimelog,
+        deleteProject,
+        deleteTask,
       }}
     >
       {children}

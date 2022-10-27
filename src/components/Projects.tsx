@@ -21,7 +21,12 @@ const Projects: FC = () => {
         {projects &&
           projects.map((item: any) => {
             return (
-              <ProjectItem key={item.id} name={item.name} color={item.color} />
+              <ProjectItem
+                key={item.id}
+                name={item.name}
+                color={item.color}
+                id={item.id}
+              />
             );
           })}
       </div>
