@@ -20,6 +20,7 @@ const Tasks: FC = () => {
             return (
               <TaskItem
                 key={item.id}
+                id={item.id}
                 projectId={item.projectId}
                 title={item.title}
               />

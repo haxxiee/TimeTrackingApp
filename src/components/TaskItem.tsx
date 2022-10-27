@@ -2,13 +2,14 @@ import { FC, useEffect, useState } from "react";
 import { useStoreContext } from "../context";
 
 interface Props {
+  id: string;
   projectId: string;
   title: string;
 }
 
-const TaskItem: FC<Props> = ({ projectId, title }) => {
+const TaskItem: FC<Props> = ({ projectId, title, id }) => {
   const [projectInfo, setProjectInfo] = useState<any>("");
-  const { getProjectFromId } = useStoreContext();
+  const { getProjectFromId, deleteTask } = useStoreContext();
 
   const { color } = projectInfo;
 
@@ -30,7 +31,7 @@ const TaskItem: FC<Props> = ({ projectId, title }) => {
         overflow-hidden`}
         />
         <div>{title}</div>
-        <div className="mr-2 text-gray-700">
+        <div className="mr-2 text-gray-700" onClick={() => deleteTask(id)}>
           <svg
             width="24"
             height="24"
