@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CalendarItem from "../components/CalendarItem";
 import { useStoreContext } from "../context";
 
 function Calendar() {
@@ -48,11 +49,7 @@ function Calendar() {
             const end2 = new Date(end.setDate(end.getDate() + 1));
 
             if (date > start && date < end2) {
-              return (
-                <div className="text-sm" key={item.id}>
-                  {item.id}
-                </div>
-              );
+              return <CalendarItem key={item.id} item={item} />;
             }
           })}
     </div>

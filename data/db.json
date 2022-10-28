@@ -56,9 +56,9 @@
       "projectId": "e0773e99-2e29-45c4-a368-8f256211b2c5",
       "taskId": "0ae043e7-cd98-4626-b122-c62b15ae6ad1",
       "createdAt": "2022-10-25T08:41:17.051Z",
-      "start": null,
-      "end": null,
-      "total": 0
+      "start": "2022-10-28T11:45:52.109Z",
+      "end": "2022-10-28T11:45:55.641Z",
+      "total": 4
     },
     {
       "id": "cbf39c0e-5fbb-4876-94ba-b353b7b4961d",
@@ -74,9 +74,9 @@
       "projectId": "e0773e99-2e29-45c4-a368-8f256211b2c5",
       "taskId": "0ae043e7-cd98-4626-b122-c62b15ae6ad1",
       "createdAt": "2022-10-28T08:42:24.897Z",
-      "start": null,
-      "end": null,
-      "total": 0
+      "start": "2022-10-28T11:45:11.283Z",
+      "end": "2022-10-28T11:45:17.204Z",
+      "total": 8
     }
   ]
 }
