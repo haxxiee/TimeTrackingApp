@@ -38,27 +38,27 @@
       "projectId": "62c8fc6f-ed0c-4d1a-8182-c1ecc2c3fabd",
       "taskId": "c45e8e39-fd21-4eaa-af40-6ff7eceafc5b",
       "createdAt": "2022-10-23T08:41:12.797Z",
-      "start": null,
-      "end": null,
-      "total": 0
+      "start": "2022-10-28T12:04:30.997Z",
+      "end": "2022-10-28T12:05:52.619Z",
+      "total": 82
     },
     {
       "id": "20b6d048-d72d-4936-a4f2-7e88c1e6ff4d",
       "projectId": "e0773e99-2e29-45c4-a368-8f256211b2c5",
       "taskId": "0ae043e7-cd98-4626-b122-c62b15ae6ad1",
       "createdAt": "2022-10-24T08:41:15.637Z",
-      "start": null,
-      "end": null,
-      "total": 0
+      "start": "2022-10-28T12:03:56.773Z",
+      "end": "2022-10-28T12:04:10.943Z",
+      "total": 21
     },
     {
       "id": "2a2a2138-538c-4b0b-a422-085f9e9b793d",
       "projectId": "e0773e99-2e29-45c4-a368-8f256211b2c5",
       "taskId": "0ae043e7-cd98-4626-b122-c62b15ae6ad1",
       "createdAt": "2022-10-28T08:42:24.897Z",
-      "start": "2022-10-28T11:58:11.476Z",
-      "end": "2022-10-28T11:58:13.249Z",
-      "total": 34
+      "start": "2022-10-28T12:03:17.122Z",
+      "end": "2022-10-28T12:03:23.994Z",
+      "total": 48
     }
   ]
 }

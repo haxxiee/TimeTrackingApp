@@ -13,7 +13,7 @@ function Calendar() {
 
   return (
     <div className="text-center">
-      <h1>Calender</h1>
+      <h1>Calendar</h1>
       <form className="flex flex-col justify-center items-center mt-10 mb-4">
         <div className="flex">
           <div className="flex flex-col justify-center items-center m-1">
