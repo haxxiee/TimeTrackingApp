@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { useStoreContext } from "../context";
 import { useTimeContext } from "../context/TimeContext";
 
@@ -7,8 +7,17 @@ interface Props {
 }
 
 const TimerInfo: FC<Props> = ({ setModal }) => {
-  const { timelogs, tasks, deleteTimelog } = useStoreContext();
+  const { deleteTimelog } = useStoreContext();
   const { setCurrentTimer, currentTimer, time, isActive } = useTimeContext();
+  const { getTaskFromId } = useStoreContext();
+  const [taskInfo, setTaskInfo] = useState<any>("");
+
+  useEffect(() => {
+    if (currentTimer) {
+      const task = getTaskFromId(currentTimer.taskId);
+      setTaskInfo(task);
+    }
+  }, [currentTimer]);
 
   const diffInSeconds = (start, end) => {
     let diff = Date.parse(end) - Date.parse(start);
@@ -51,7 +60,7 @@ const TimerInfo: FC<Props> = ({ setModal }) => {
       ) : (
         <div className="mt-20">{timerFormat(currentTimer?.total)}</div>
       )}
-      <p>Task name</p>
+      {taskInfo.title ? <h2>{taskInfo.title}</h2> : <h2>Task name</h2>}
       <div
         className="absolute top-3 right-2 text-3xl"
         onClick={() => setModal(true)}

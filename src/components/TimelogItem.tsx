@@ -40,7 +40,7 @@ const TimelogItem: FC<Props> = ({
     return false;
   };
   const [timer, setTimer] = useState<boolean>(getStateFromLocal());
-  const { title } = taskInfo;
+  const { title, name } = taskInfo;
   const { color } = projectInfo;
 
   useEffect(() => {
