@@ -150,7 +150,6 @@ const TimelogItem: FC<Props> = ({
       end: end,
       total: total,
     });
-    console.log("YOOOOO");
 
     setIsActive({ status: getStateFromLocal(), id: id });
   };

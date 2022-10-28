@@ -1,5 +1,82 @@
 {
-  "projects": [],
-  "tasks": [],
-  "timelogs": []
+  "projects": [
+    {
+      "id": "62c8fc6f-ed0c-4d1a-8182-c1ecc2c3fabd",
+      "name": "School",
+      "color": "purple"
+    },
+    {
+      "id": "e0773e99-2e29-45c4-a368-8f256211b2c5",
+      "name": "Home",
+      "color": "red"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "0ae043e7-cd98-4626-b122-c62b15ae6ad1",
+      "projectId": "e0773e99-2e29-45c4-a368-8f256211b2c5",
+      "title": "Cook"
+    },
+    {
+      "id": "c45e8e39-fd21-4eaa-af40-6ff7eceafc5b",
+      "projectId": "62c8fc6f-ed0c-4d1a-8182-c1ecc2c3fabd",
+      "title": "Study"
+    }
+  ],
+  "timelogs": [
+    {
+      "id": "b5d8c73a-5711-4598-97c7-0a17111d1cee",
+      "projectId": "e0773e99-2e29-45c4-a368-8f256211b2c5",
+      "taskId": "0ae043e7-cd98-4626-b122-c62b15ae6ad1",
+      "createdAt": "2022-10-22T08:18:08.319Z",
+      "start": "2022-10-28T08:18:09.161Z",
+      "end": "2022-10-28T08:41:22.634Z",
+      "total": 1394
+    },
+    {
+      "id": "a78e86a3-0d20-42e6-884e-32497f13f7ca",
+      "projectId": "62c8fc6f-ed0c-4d1a-8182-c1ecc2c3fabd",
+      "taskId": "c45e8e39-fd21-4eaa-af40-6ff7eceafc5b",
+      "createdAt": "2022-10-23T08:41:12.797Z",
+      "start": null,
+      "end": null,
+      "total": 0
+    },
+    {
+      "id": "20b6d048-d72d-4936-a4f2-7e88c1e6ff4d",
+      "projectId": "e0773e99-2e29-45c4-a368-8f256211b2c5",
+      "taskId": "0ae043e7-cd98-4626-b122-c62b15ae6ad1",
+      "createdAt": "2022-10-24T08:41:15.637Z",
+      "start": null,
+      "end": null,
+      "total": 0
+    },
+    {
+      "id": "ae60efd3-6d42-472c-92ef-7a887238ca3b",
+      "projectId": "e0773e99-2e29-45c4-a368-8f256211b2c5",
+      "taskId": "0ae043e7-cd98-4626-b122-c62b15ae6ad1",
+      "createdAt": "2022-10-25T08:41:17.051Z",
+      "start": null,
+      "end": null,
+      "total": 0
+    },
+    {
+      "id": "cbf39c0e-5fbb-4876-94ba-b353b7b4961d",
+      "projectId": "62c8fc6f-ed0c-4d1a-8182-c1ecc2c3fabd",
+      "taskId": "c45e8e39-fd21-4eaa-af40-6ff7eceafc5b",
+      "createdAt": "2022-10-26T08:41:20.014Z",
+      "start": null,
+      "end": null,
+      "total": 0
+    },
+    {
+      "id": "2a2a2138-538c-4b0b-a422-085f9e9b793d",
+      "projectId": "e0773e99-2e29-45c4-a368-8f256211b2c5",
+      "taskId": "0ae043e7-cd98-4626-b122-c62b15ae6ad1",
+      "createdAt": "2022-10-28T08:42:24.897Z",
+      "start": null,
+      "end": null,
+      "total": 0
+    }
+  ]
 }
